@@ -3,7 +3,8 @@ function toggleMenu() {
     menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 
-const OPENAI_API_KEY = "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";  
+const OPENAI_API_KEY = "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";  
+
 async function handleAIQuestion() {
     const question = document.getElementById("ai-question").value.trim();
     const responseBox = document.getElementById("ai-response");
@@ -16,15 +17,20 @@ async function handleAIQuestion() {
     responseBox.textContent = "AI svarar...";
 
     const requestBody = {
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: question }],
-        max_tokens: 100,
+        model: "gpt-4o-mini",
+        messages: [
+            {
+                role: "system",
+                content: "Du är en expert på växter och växtvård. Svara endast på frågor som handlar om växter och växtskötsel. Om frågan inte handlar om växter, svara med 'Jag kan endast svara på frågor om växter och växtskötsel.'"
+            },
+            {
+                role: "user",
+                content: question
+            }
+        ],
+        max_tokens: 400,
         temperature: 0.7
-
-
     };
-
-    console.log("Skickar API-anrop:", requestBody);
 
     try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -37,7 +43,6 @@ async function handleAIQuestion() {
         });
 
         const data = await response.json();
-        console.log("API Svar:", data);
 
         if (response.ok) {
             responseBox.textContent = data.choices[0].message.content.trim();
@@ -50,6 +55,7 @@ async function handleAIQuestion() {
         responseBox.textContent = "Ett fel uppstod. Försök igen.";
     }
 }
+
 
 
 
