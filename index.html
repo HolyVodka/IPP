@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        Välkommen till inställningarna för din självvattnande kruka!
+        Välkommen till hemsidan för din självvattnande kruka!
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -17,8 +17,8 @@
         </div>
         <div id="menu" class="menu-items">
             <a href="#">Startsida</a>
-            <a href="#">Ställ in krukan</a>
-            <a href="#">Fråga AI</a>
+            <a href="#">Vattennivå i tanken</a>
+            <a href="questionAI.html">Fråga AI</a>
             <a href="#vision">Vision</a>
         </div>
     </header>
@@ -26,8 +26,9 @@
     <div class="main-content">
         <img src="växt.webp" alt="Självvattnande kruka">
 
-        <button class="option-button">Ställ in krukan för min växt</button>
-        <button class="option-button">Fråga AI om information kring din växt</button>
+        <button class="option-button">Vattennivån i tanken</button>
+        <button onclick="window.location.href='questionAI.html'" class="option-button">Fråga AI om information kring din växt</button>
+
     </div>
 
     <section id="vision" style="padding: 100px 20px; background-color: rgba(255,255,255,0.9); margin-top: 50px;">
@@ -41,21 +42,9 @@
             Med smart teknik och hållbar design vill vi hjälpa människor att ta hand om sina växter utan stress.
         </p>
     
-        <div class="quote-box">
-            "Vattna är passé, det är framtiden som styr,<br>
-            din kruka fixar fukten när du är på flyr.<br>
-            Så njut av din öl och semester i fred,<br>
-            för hemma är grönskan redan på G!"
-        </div>
     </section>
     
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        }
-    </script>
+    </script src="./script.js"></script>
 </body>
 </html>
 

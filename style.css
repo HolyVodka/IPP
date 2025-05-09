@@ -92,25 +92,26 @@ img {
     background-color: #218838;
 }
 
-.quote-box {
-    position: relative;
-    background-color: white;
-    padding: 20px 30px;
-    margin: 40px auto 0;
-    max-width: 350px;
-    font-style: italic;
-    color: #28a745;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-radius: 40px; 
+/* För AI-sidan */
+#ai-question {
+    width: 30%;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    margin-left: 3%;
+
 }
 
-.quote-box::before {
-content: "";
-position: absolute;
-bottom: 20px;
-left: -30px; 
-width: 0;
-height: 0;
-border: 15px solid transparent;
-border-right: 30px solid white;
+#ai-response {
+    width: 80%;
+    min-height: 100px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
 }
+
